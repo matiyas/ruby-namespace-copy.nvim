@@ -7,11 +7,25 @@ description = {
   detailed = [[
     A Neovim plugin that uses Tree-sitter to extract and copy the fully qualified
     Ruby class/module namespace at the cursor position to the clipboard. Handles
-    nested modules, classes, and scope resolution syntax.
+    nested modules, classes, and scope resolution syntax (e.g., MyApp::Services::UserCreator).
+    Essential for large Ruby/Rails codebases.
   ]],
   license = "MIT",
   homepage = "https://github.com/matiyas/ruby-namespace-copy.nvim",
-  labels = { "neovim", "ruby", "treesitter", "namespace", "clipboard" },
+  issues_url = "https://github.com/matiyas/ruby-namespace-copy.nvim/issues",
+  maintainer = "matiyas",
+  labels = {
+    "neovim",
+    "neovim-plugin",
+    "ruby",
+    "rails",
+    "tree-sitter",
+    "treesitter",
+    "namespace",
+    "clipboard",
+    "productivity",
+    "lua",
+  },
 }
 
 dependencies = {
