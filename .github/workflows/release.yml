@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: nvim-neorocks/luarocks-tag-release@v7
+        env:
+          LUAROCKS_API_KEY: ${{ secrets.LUAROCKS_API_KEY }}
+        with:
+          name: ruby-namespace-copy.nvim
+          summary: "Copy Ruby class/module namespace to clipboard using Tree-sitter"
+          labels: |
+            neovim
+            ruby
+            treesitter
+            namespace
+            clipboard
+          copy_directories: |
+            lua
+            plugin
