@@ -17,7 +17,7 @@ When working in large Ruby codebases, you often need to reference the full names
 ## Requirements
 
 - Neovim >= 0.9.0
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) with Ruby parser installed
+- Ruby tree-sitter parser installed (easiest via [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): `:TSInstall ruby`)
 
 ## Installation
 
