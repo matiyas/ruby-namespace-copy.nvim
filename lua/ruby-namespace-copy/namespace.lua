@@ -1,17 +1,15 @@
 local M = {}
 
 function M.get()
-  local ts_utils = require("nvim-treesitter.ts_utils")
-  local parsers = require("nvim-treesitter.parsers")
-
   if vim.bo.filetype ~= "ruby" then return nil end
 
-  if not parsers.has_parser("ruby") then
+  local ok, parser = pcall(vim.treesitter.get_parser, 0, "ruby")
+  if not ok or not parser then
     vim.notify("Ruby parser not available", vim.log.levels.ERROR)
     return nil
   end
 
-  local current_node = ts_utils.get_node_at_cursor()
+  local current_node = vim.treesitter.get_node()
   if not current_node then return nil end
 
   local namespace_parts = {}
