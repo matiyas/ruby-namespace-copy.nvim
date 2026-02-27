@@ -43,9 +43,31 @@ This section guides you through submitting an enhancement suggestion, including 
 
 ### Commit Messages
 
-* Use the present tense ("Add feature" not "Added feature").
-* Use the imperative mood ("Move cursor to..." not "Moves cursor to...").
-* Limit the first line to 72 characters or less.
+This project follows [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+Format: `<type>[optional scope]: <description>`
+
+**Types:**
+* `feat` - New feature
+* `fix` - Bug fix
+* `docs` - Documentation changes
+* `style` - Code style changes (formatting, no logic change)
+* `refactor` - Code refactoring
+* `perf` - Performance improvements
+* `test` - Adding or updating tests
+* `ci` - CI/CD changes
+* `chore` - Maintenance tasks
+
+**Examples:**
+* `feat: add support for singleton classes`
+* `fix: handle nested modules correctly`
+* `docs: update installation instructions`
+* `ci: add lua 5.1 to test matrix`
+
+**Rules:**
+* Use the present tense ("add feature" not "added feature")
+* Use the imperative mood ("move cursor to..." not "moves cursor to...")
+* Limit the first line to 72 characters or less
 
 ## Questions?
 
