@@ -6,7 +6,49 @@ on:
       - "v*"
 
 jobs:
-  release:
+  github-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Generate release notes
+        id: notes
+        run: |
+          # Get previous tag
+          PREV_TAG=$(git tag --sort=-version:refname | sed -n '2p')
+          if [ -z "$PREV_TAG" ]; then
+            echo "notes<<EOF" >> $GITHUB_OUTPUT
+            echo "Initial release" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "notes<<EOF" >> $GITHUB_OUTPUT
+            git log --pretty=format:"- %s" "$PREV_TAG"..HEAD >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+      - uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          body: |
+            ## What's Changed
+            ${{ steps.notes.outputs.notes }}
+
+            ## Installation
+
+            ### lazy.nvim
+            ```lua
+            { "matiyas/ruby-namespace-copy.nvim", tag = "${{ github.ref_name }}" }
+            ```
+
+            ### LuaRocks
+            ```
+            luarocks install ruby-namespace-copy.nvim
+            ```
+
+  luarocks-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
