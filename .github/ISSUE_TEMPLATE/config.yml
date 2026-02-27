@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or Discussion
+    url: https://github.com/matiyas/ruby-namespace-copy.nvim/discussions
+    about: Please use discussions for questions, ideas, and general talk.
