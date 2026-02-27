@@ -1,0 +1,49 @@
+name: Bug Report
+description: Report a bug to help us improve ruby-namespace-copy.nvim
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug! Please fill out the form below as accurately as possible.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      placeholder: Describe the bug in detail.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. Open a Ruby file with the following content:
+        ```ruby
+        module A
+          class B
+            # cursor here
+          end
+        end
+        ```
+        2. Run :RubyNamespaceCopy (or your keymap)
+        3. See error...
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      placeholder: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        - Neovim version:
+        - OS:
+        - nvim-treesitter version (or ruby parser version):
+    validations:
+      required: true
