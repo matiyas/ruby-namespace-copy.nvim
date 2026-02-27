@@ -1,6 +1,8 @@
 # ruby-namespace-copy.nvim
 
 [![CI](https://github.com/matiyas/ruby-namespace-copy.nvim/actions/workflows/test.yml/badge.svg)](https://github.com/matiyas/ruby-namespace-copy.nvim/actions/workflows/test.yml)
+[![LuaRocks](https://img.shields.io/luarocks/v/matiyas/ruby-namespace-copy.nvim?logo=lua&color=purple)](https://luarocks.org/modules/matiyas/ruby-namespace-copy.nvim)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Neovim plugin that uses Tree-sitter to extract and copy the fully qualified Ruby class/module namespace at the cursor position to the clipboard.
 
